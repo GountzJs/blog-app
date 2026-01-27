@@ -1,0 +1,8 @@
+{
+  "profile": {
+    "username": "johndoe",
+    "bio": "I work at statefarm",
+    "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+    "following": false
+  }
+}
