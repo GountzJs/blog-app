@@ -1,5 +1,20 @@
+import { isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { App } from './app/app';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(App, appConfig).catch((err) => console.error(err));
+async function enableMocking() {
+  if (!isDevMode()) {
+    return;
+  }
+
+  const { worker } = await import('./mock/browser');
+
+  return worker.start();
+}
+
+enableMocking()
+  .then(async () => {
+    await bootstrapApplication(App, appConfig);
+  })
+  .catch((err) => console.log(err));
