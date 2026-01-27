@@ -40,7 +40,7 @@ ng test
 
 ## Development Conventions
 
-*   **Styling**: The project uses Tailwind CSS. Utility classes should be used for styling.
-*   **Testing**: Unit tests are written with Vitest. Test files are located alongside the source files they test and have the `.spec.ts` extension.
-*   **Code Formatting**: The project uses Prettier for code formatting. You can run `npx prettier --write .` to format the code.
-*   **Package Manager**: I prefer to use `bun` instead of `npm`.
+- **Styling**: The project uses Tailwind CSS. Utility classes should be used for styling.
+- **Testing**: Unit tests are written with Vitest. Test files are located alongside the source files they test and have the `.spec.ts` extension.
+- **Code Formatting**: The project uses Prettier for code formatting. You can run `npx prettier --write .` to format the code.
+- **Package Manager**: I prefer to use `bun` instead of `npm`.
