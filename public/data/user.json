@@ -1,0 +1,9 @@
+{
+  "user": {
+    "email": "johndoe@example.com",
+    "token": "jwt.token.here",
+    "username": "johndoe",
+    "bio": "I work at statefarm",
+    "image": "https://api.realworld.io/images/smiley-cyrus.jpeg"
+  }
+}

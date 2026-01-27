@@ -24,31 +24,35 @@ afterAll(() => server.close());
 
 describe('API Mocks Verification', () => {
   // User Authentication
-  it('intercepts POST /api/users/login', async () => {
+  it('intercepts POST /api/users/login and returns mock data', async () => {
     const response = await fetch('http://localhost:4200/api/users/login', { method: 'POST' });
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({});
+    const data = await response.json();
+    expect(data.user.email).toBe('johndoe@example.com');
   });
 
-  it('intercepts POST /api/users', async () => {
+  it('intercepts POST /api/users and returns mock data', async () => {
     const response = await fetch('http://localhost:4200/api/users', { method: 'POST' });
     expect(response.status).toBe(201);
-    expect(await response.json()).toEqual({});
+    const data = await response.json();
+    expect(data.user.username).toBe('johndoe');
   });
 
-  it('intercepts GET /api/user', async () => {
+  it('intercepts GET /api/user and returns mock data', async () => {
     const response = await fetch('http://localhost:4200/api/user');
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({});
+    const data = await response.json();
+    expect(data.user.bio).toBe('I work at statefarm');
   });
 
-  it('intercepts PUT /api/user', async () => {
+  it('intercepts PUT /api/user and returns mock data', async () => {
     const response = await fetch('http://localhost:4200/api/user', { method: 'PUT' });
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({});
+    const data = await response.json();
+    expect(data.user.image).toBe('https://api.realworld.io/images/smiley-cyrus.jpeg');
   });
 
-  // Profile
+  // Profile (Still empty mocks)
   it('intercepts GET /api/profiles/:username', async () => {
     const response = await fetch('http://localhost:4200/api/profiles/johndoe');
     expect(response.status).toBe(200);
