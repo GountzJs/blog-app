@@ -1,0 +1,13 @@
+<div class="flex gap-4 w-fit">
+  <img
+    [src]="avatar"
+    class="rounded-full object-cover w-10 h-10"
+    width="40px"
+    height="40px"
+    alt="Avatar {{ username }}"
+  />
+  <div class="flex flex-col gap-0.5 w-fit">
+    <p class="font-semibold text-md">{{ username }}</p>
+    <p class="opacity-80 text-xs font-regular">{{ createdAt | date: 'dd/MM/yyyy' }}</p>
+  </div>
+</div>
