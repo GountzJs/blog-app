@@ -1,3 +1,4 @@
+import { TagStore } from '@/modules/articles/services/tag-store/tag-store';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -7,7 +8,15 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('@/pages/home/home').then((m) => m.Home),
+        loadComponent: () =>
+          import('@/layouts/dashboard-layout/dashboard-layout').then((c) => c.DashboardLayout),
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('@/pages/home/home').then((m) => m.Home),
+          },
+        ],
+        providers: [TagStore],
       },
       {
         path: 'auth/sign-in',
