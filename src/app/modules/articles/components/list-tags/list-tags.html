@@ -5,10 +5,13 @@
   </p>
   <ul class="flex flex-wrap gap-2">
     @for (tag of tags(); track $index) {
-      <li class="bg-gray-900 rounded-full px-2 py-1">{{ tag }}</li>
+      <li class="bg-gray-900 rounded-full px-4 py-1.5">{{ tag }}</li>
     }
   </ul>
   @if (errorMsg()) {
     <p class="text-red-500 font-semibold">{{ errorMsg() }}</p>
+  }
+  @if (isLoading()) {
+    <p class="text-white font-semibold">Cargando etiquetas...</p>
   }
 </aside>
