@@ -25,7 +25,7 @@ export class Home implements OnInit, OnDestroy {
   }
 
   getParams(): void {
-    const sub = this.router.params.subscribe((params) => {
+    const sub = this.router.queryParams.subscribe((params) => {
       const tag = params['tag'] || undefined;
       this.tag.set(tag);
     });
