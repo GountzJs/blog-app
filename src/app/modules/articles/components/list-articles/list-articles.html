@@ -12,7 +12,12 @@
             [createdAt]="article.createdAt"
           ></app-user-info>
           <h2 class="text-xl font-bold">{{ article.title }}</h2>
-          <p class="text-gray-400 text-sm font-medium">{{ article.description }}</p>
+          <p
+            appElipsisText
+            [max]="50"
+            [elipsisText]="article.description"
+            class="text-gray-400 text-sm font-medium"
+          ></p>
           <div class="flex justify-between gap-4 mt-4">
             <p class="text-xs font-regular opacity-60">Read more...</p>
             <ul class="flex flex-wrap gap-2">
