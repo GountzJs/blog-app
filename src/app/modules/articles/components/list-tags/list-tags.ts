@@ -1,6 +1,7 @@
 import { Tags } from '@/modules/articles/services/tags/tags';
 import { Icons } from '@/modules/common/components/icons/icons';
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-tags',
@@ -11,6 +12,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 })
 export class ListTags implements OnInit {
   private readonly tagsService = inject(Tags);
+  private readonly router = inject(Router);
   tags = signal<string[]>([]);
   errorMsg = signal('');
   isLoading = signal(false);
@@ -32,5 +34,9 @@ export class ListTags implements OnInit {
         },
       })
       .add(() => this.isLoading.set(false));
+  }
+
+  filterByTag(tag: string): void {
+    this.router.navigate(['/'], { queryParams: { tag } });
   }
 }
