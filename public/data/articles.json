@@ -1,0 +1,345 @@
+{
+  "articles": [
+    {
+      "slug": "how-to-train-your-dragon",
+      "title": "How to train your dragon",
+      "description": "Ever wondered how to train a dragon? It's easier than you think.",
+      "body": "It takes a Jacobian matrix to train a dragon.",
+      "tagList": ["tutorial", "career"],
+      "createdAt": "2024-02-18T03:22:56.637Z",
+      "updatedAt": "2024-02-18T03:48:35.824Z",
+      "favorited": false,
+      "favoritesCount": 0,
+      "author": {
+        "username": "jake",
+        "bio": "I work at statefarm",
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    },
+    {
+      "slug": "how-to-train-your-dragon-2",
+      "title": "How to train your dragon 2",
+      "description": "So toothless",
+      "body": "It a dragon",
+      "tagList": ["tutorial", "productivity"],
+      "createdAt": "2024-02-18T03:22:56.637Z",
+      "updatedAt": "2024-02-18T03:48:35.824Z",
+      "favorited": false,
+      "favoritesCount": 1,
+      "author": {
+        "username": "jake",
+        "bio": "I work at statefarm",
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    },
+    {
+      "slug": "angular-signals-guide",
+      "title": "A Comprehensive Guide to Angular Signals",
+      "description": "Learn how to use Signals to manage state in Angular applications.",
+      "body": "Signals are a new way to manage state in Angular...",
+      "tagList": ["angular", "web-development", "programming"],
+      "createdAt": "2024-03-01T10:00:00.000Z",
+      "updatedAt": "2024-03-01T10:00:00.000Z",
+      "favorited": true,
+      "favoritesCount": 120,
+      "author": {
+        "username": "ng-guru",
+        "bio": "Angular Expert",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "web-performance-tips",
+      "title": "Top 10 Web Performance Tips",
+      "description": "Optimize your website for speed and efficiency.",
+      "body": "Performance is critical for user experience...",
+      "tagList": ["web-development", "performance", "tech"],
+      "createdAt": "2024-03-05T14:30:00.000Z",
+      "updatedAt": "2024-03-05T14:30:00.000Z",
+      "favorited": false,
+      "favoritesCount": 45,
+      "author": {
+        "username": "speed-demon",
+        "bio": "Faster than light",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "testing-with-msw",
+      "title": "Mocking APIs with MSW",
+      "description": "A deep dive into Mock Service Worker.",
+      "body": "MSW intercepts requests on the network level...",
+      "tagList": ["testing", "javascript", "web-development"],
+      "createdAt": "2024-03-10T09:15:00.000Z",
+      "updatedAt": "2024-03-10T09:15:00.000Z",
+      "favorited": false,
+      "favoritesCount": 89,
+      "author": {
+        "username": "test-master",
+        "bio": "TDD for life",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "tailwind-css-tricks",
+      "title": "Cool Tailwind CSS Tricks",
+      "description": "Advanced techniques for utility-first CSS.",
+      "body": "Tailwind provides a powerful way to style...",
+      "tagList": ["design", "web-development", "tech"],
+      "createdAt": "2024-03-12T16:45:00.000Z",
+      "updatedAt": "2024-03-12T16:45:00.000Z",
+      "favorited": true,
+      "favoritesCount": 230,
+      "author": {
+        "username": "css-wizard",
+        "bio": "Styling the web",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "bun-runtime",
+      "title": "Why Bun is the Future",
+      "description": "Exploring the new JavaScript runtime.",
+      "body": "Bun is incredibly fast...",
+      "tagList": ["javascript", "tech", "programming"],
+      "createdAt": "2024-03-15T11:20:00.000Z",
+      "updatedAt": "2024-03-15T11:20:00.000Z",
+      "favorited": false,
+      "favoritesCount": 67,
+      "author": {
+        "username": "js-explorer",
+        "bio": "Always learning",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "typescript-pros-cons",
+      "title": "TypeScript: Pros and Cons",
+      "description": "Is it worth the extra setup?",
+      "body": "Static typing brings many benefits...",
+      "tagList": ["programming", "web-development", "clean-code"],
+      "createdAt": "2024-03-18T08:50:00.000Z",
+      "updatedAt": "2024-03-18T08:50:00.000Z",
+      "favorited": false,
+      "favoritesCount": 34,
+      "author": {
+        "username": "type-safe",
+        "bio": "Strict mode on",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "react-vs-angular",
+      "title": "React vs Angular: 2024 Edition",
+      "description": "Comparing the two giants.",
+      "body": "Both frameworks have evolved...",
+      "tagList": ["react", "angular", "web-development"],
+      "createdAt": "2024-03-20T13:10:00.000Z",
+      "updatedAt": "2024-03-20T13:10:00.000Z",
+      "favorited": false,
+      "favoritesCount": 500,
+      "author": {
+        "username": "framework-fanatic",
+        "bio": "I use everything",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "docker-for-beginners",
+      "title": "Docker for Beginners",
+      "description": "Containerize your applications.",
+      "body": "Docker simplifies deployment...",
+      "tagList": ["tech", "architecture", "tutorial"],
+      "createdAt": "2024-03-22T09:00:00.000Z",
+      "updatedAt": "2024-03-22T09:00:00.000Z",
+      "favorited": true,
+      "favoritesCount": 150,
+      "author": {
+        "username": "cloud-native",
+        "bio": "Deploying daily",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "sustainable-tech",
+      "title": "Building Sustainable Tech",
+      "description": "Green computing practices.",
+      "body": "Reducing carbon footprint in tech...",
+      "tagList": ["tech", "architecture", "career"],
+      "createdAt": "2024-03-25T15:40:00.000Z",
+      "updatedAt": "2024-03-25T15:40:00.000Z",
+      "favorited": false,
+      "favoritesCount": 92,
+      "author": {
+        "username": "eco-dev",
+        "bio": "Saving the planet",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "ai-in-web-dev",
+      "title": "AI in Web Development",
+      "description": "How AI is changing the landscape.",
+      "body": "Generative AI tools are assisting developers...",
+      "tagList": ["tech", "web-development", "productivity"],
+      "createdAt": "2024-03-28T11:05:00.000Z",
+      "updatedAt": "2024-03-28T11:05:00.000Z",
+      "favorited": true,
+      "favoritesCount": 300,
+      "author": {
+        "username": "ai-enthusiast",
+        "bio": "Robot friend",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "graphql-basics",
+      "title": "GraphQL Basics",
+      "description": "Understanding Queries and Mutations.",
+      "body": "Fetch exactly what you need...",
+      "tagList": ["web-development", "architecture", "tutorial"],
+      "createdAt": "2024-04-01T10:00:00.000Z",
+      "updatedAt": "2024-04-01T10:00:00.000Z",
+      "favorited": false,
+      "favoritesCount": 110,
+      "author": {
+        "username": "api-architect",
+        "bio": "Designing schemas",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "nodejs-streams",
+      "title": "Mastering Node.js Streams",
+      "description": "Handling large data efficiently.",
+      "body": "Streams are powerful...",
+      "tagList": ["javascript", "architecture", "programming"],
+      "createdAt": "2024-04-03T14:20:00.000Z",
+      "updatedAt": "2024-04-03T14:20:00.000Z",
+      "favorited": false,
+      "favoritesCount": 55,
+      "author": {
+        "username": "node-ninja",
+        "bio": "Backend wizard",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "accessibility-matters",
+      "title": "Why Accessibility Matters",
+      "description": "Building inclusive web applications.",
+      "body": "The web is for everyone...",
+      "tagList": ["design", "web-development", "clean-code"],
+      "createdAt": "2024-04-05T09:45:00.000Z",
+      "updatedAt": "2024-04-05T09:45:00.000Z",
+      "favorited": true,
+      "favoritesCount": 180,
+      "author": {
+        "username": "a11y-advocate",
+        "bio": "Inclusive design",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "cybersecurity-101",
+      "title": "Cybersecurity 101",
+      "description": "Protecting your applications.",
+      "body": "Security is ongoing...",
+      "tagList": ["tech", "architecture", "tutorial"],
+      "createdAt": "2024-04-08T16:15:00.000Z",
+      "updatedAt": "2024-04-08T16:15:00.000Z",
+      "favorited": false,
+      "favoritesCount": 130,
+      "author": {
+        "username": "sec-officer",
+        "bio": "Safety first",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "future-of-css",
+      "title": "The Future of CSS",
+      "description": "New features coming to the platform.",
+      "body": "CSS is evolving rapidly...",
+      "tagList": ["design", "web-development", "tech"],
+      "createdAt": "2024-04-10T12:00:00.000Z",
+      "updatedAt": "2024-04-10T12:00:00.000Z",
+      "favorited": true,
+      "favoritesCount": 210,
+      "author": {
+        "username": "css-wizard",
+        "bio": "Styling the web",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "rust-for-web",
+      "title": "Rust for Web Development",
+      "description": "Using Wasm and Rust.",
+      "body": "Rust brings performance...",
+      "tagList": ["programming", "web-development", "tech"],
+      "createdAt": "2024-04-12T10:30:00.000Z",
+      "updatedAt": "2024-04-12T10:30:00.000Z",
+      "favorited": false,
+      "favoritesCount": 160,
+      "author": {
+        "username": "rustacean",
+        "bio": "Crab lover",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    },
+    {
+      "slug": "mobile-first-design",
+      "title": "Mobile First Design",
+      "description": "Designing for smaller screens first.",
+      "body": "Mobile usage is dominant...",
+      "tagList": ["design", "web-development", "responsive"],
+      "createdAt": "2024-04-15T08:00:00.000Z",
+      "updatedAt": "2024-04-15T08:00:00.000Z",
+      "favorited": true,
+      "favoritesCount": 95,
+      "author": {
+        "username": "mobile-expert",
+        "bio": "On the go",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": false
+      }
+    },
+    {
+      "slug": "scrum-methodology",
+      "title": "Understanding Scrum",
+      "description": "Agile project management.",
+      "body": "Sprints and standups...",
+      "tagList": ["productivity", "startup", "career"],
+      "createdAt": "2024-04-18T13:45:00.000Z",
+      "updatedAt": "2024-04-18T13:45:00.000Z",
+      "favorited": false,
+      "favoritesCount": 40,
+      "author": {
+        "username": "scrum-master",
+        "bio": "Organized chaos",
+        "image": "https://api.realworld.io/images/demo-avatar.png",
+        "following": true
+      }
+    }
+  ],
+  "articlesCount": 20
+}
