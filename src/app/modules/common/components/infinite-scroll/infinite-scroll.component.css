@@ -1,0 +1,10 @@
+.infinite-scroll-anchor {
+  height: 10px;
+  width: 100%;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+}
