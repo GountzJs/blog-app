@@ -4,11 +4,11 @@
     Popular Tags
   </p>
   <ul class="flex flex-wrap gap-2">
-    @for (tag of tags; track $index) {
+    @for (tag of tags(); track $index) {
       <li class="bg-gray-900 rounded-full px-2 py-1">{{ tag }}</li>
     }
   </ul>
-  @if (errorMsg) {
-    <p class="text-red-500 font-semibold">{{ errorMsg }}</p>
+  @if (errorMsg()) {
+    <p class="text-red-500 font-semibold">{{ errorMsg() }}</p>
   }
 </aside>

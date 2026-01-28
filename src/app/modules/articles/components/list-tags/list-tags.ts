@@ -1,5 +1,5 @@
 import { Icons } from '@/modules/common/components/icons/icons';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Tags } from '../../services/tags';
 
 @Component({
@@ -11,8 +11,8 @@ import { Tags } from '../../services/tags';
 })
 export class ListTags implements OnInit {
   private readonly tagsService = inject(Tags);
-  tags: string[] = [];
-  errorMsg = '';
+  tags = signal<string[]>([]);
+  errorMsg = signal('');
 
   ngOnInit(): void {
     this.getTags();
@@ -21,10 +21,10 @@ export class ListTags implements OnInit {
   getTags(): void {
     this.tagsService.getAll().subscribe({
       next: ({ tags }) => {
-        this.tags = tags;
+        this.tags.set(tags);
       },
       error: () => {
-        this.errorMsg = 'Error al cargar las etiquetas';
+        this.errorMsg.set('Error al cargar las etiquetas');
       },
     });
   }
