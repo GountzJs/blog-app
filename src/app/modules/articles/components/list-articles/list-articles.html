@@ -2,7 +2,7 @@
   <ul class="flex flex-col gap-6 rounded-lg w-full">
     @for (article of articles(); track article.slug) {
       <li class="w-full">
-        <div class="outline outline-gray-800 w-full rounded-lg p-4 flex flex-col gap-2">
+        <div class="outline-2 outline-gray-800 w-full rounded-lg p-4 flex flex-col gap-2">
           <app-user-info
             [avatar]="article.author.image"
             [username]="article.author.username"
@@ -18,7 +18,8 @@
           <div class="flex justify-between gap-4 mt-4">
             <a
               routerLink="/article/{{ article.slug }}"
-              class="text-xs font-regular opacity-60 hover:opacity-100"
+              aria-label="Read more {{ article.title }}"
+              class="text-xs font-regular transition-opacity duration-200 opacity-60 hover:opacity-100"
             >
               Read more...
             </a>
