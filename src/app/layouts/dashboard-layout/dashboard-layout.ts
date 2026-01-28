@@ -4,11 +4,11 @@ import { TagStore } from '@/modules/articles/services/tag-store/tag-store';
 import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import { Location, NgClass } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-layout',
-  imports: [RouterOutlet, ListTags, ClearTag, NgClass],
+  imports: [RouterOutlet, RouterLink, ListTags, ClearTag, NgClass],
   templateUrl: './dashboard-layout.html',
   styleUrl: './dashboard-layout.css',
   providers: [SubManager],

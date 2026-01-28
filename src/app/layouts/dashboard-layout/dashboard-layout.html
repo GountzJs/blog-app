@@ -34,10 +34,10 @@
   <app-clear-tag [tag]="getTag()"></app-clear-tag>
 
   <article class="flex justify-between flex-wrap-reverse gap-4 w-full">
-    <div class="max-w-150 w-full">
+    <div class="min-w-150">
       <router-outlet></router-outlet>
     </div>
 
-    <app-list-tags class="w-full min-w-64 max-w-78"></app-list-tags>
+    <app-list-tags class="min-w-64 max-w-78"></app-list-tags>
   </article>
 </section>
