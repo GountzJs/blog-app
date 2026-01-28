@@ -1,7 +1,7 @@
 import { ListArticles } from '@/modules/articles/components/list-articles/list-articles';
 import { ListTags } from '@/modules/articles/components/list-tags/list-tags';
 import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,13 +11,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './home.css',
   providers: [SubManager],
 })
-export class Home implements OnInit {
+export class Home implements OnInit, OnDestroy {
   private readonly router = inject(ActivatedRoute);
   private readonly subManager = inject(SubManager);
   tag = signal<string | undefined>(undefined);
 
   ngOnInit(): void {
     this.getParams();
+  }
+
+  ngOnDestroy(): void {
+    this.subManager.destroy();
   }
 
   getParams(): void {

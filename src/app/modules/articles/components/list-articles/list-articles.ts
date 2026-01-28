@@ -3,7 +3,15 @@ import { Article } from '@/modules/articles/models/entities/article.entity';
 import { Articles } from '@/modules/articles/services/articles/articles';
 import { InfiniteScrollComponent } from '@/modules/common/components/infinite-scroll/infinite-scroll.component';
 import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
-import { Component, inject, Input, OnChanges, signal, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  signal,
+  SimpleChanges,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserInfo } from '../user-info/user-info';
 
@@ -14,7 +22,7 @@ import { UserInfo } from '../user-info/user-info';
   styleUrl: './list-articles.css',
   providers: [Articles, SubManager],
 })
-export class ListArticles implements OnChanges {
+export class ListArticles implements OnChanges, OnDestroy {
   @Input() tag: string | undefined = undefined;
 
   private readonly articlesService = inject(Articles);
@@ -29,6 +37,10 @@ export class ListArticles implements OnChanges {
       this.noMoreItems.set(false);
       this.getArticles(0);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subManager.destroy();
   }
 
   private getArticles(offset: number): void {
