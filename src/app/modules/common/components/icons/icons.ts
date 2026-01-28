@@ -7,7 +7,11 @@ import { Icon } from './services/icon';
 @Component({
   selector: 'app-icons',
   imports: [NgStyle],
-  template: `<span [innerHTML]="svg" [ngStyle]="{ width: size, height: size }"></span>`,
+  template: `<span
+    class="icon"
+    [innerHTML]="svg"
+    [ngStyle]="{ width: size, height: size }"
+  ></span>`,
   styleUrl: './icons.css',
   providers: [Icon],
 })
