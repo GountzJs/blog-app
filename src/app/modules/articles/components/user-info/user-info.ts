@@ -1,9 +1,10 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './user-info.html',
   styleUrl: './user-info.css',
 })

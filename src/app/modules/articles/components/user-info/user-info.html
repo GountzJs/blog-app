@@ -1,4 +1,7 @@
-<div class="flex gap-4 w-fit">
+<a
+  routerLink="/profile/@{{ username }}"
+  class="flex gap-4 w-fit hover:opacity-80 transition-opacity duration-300"
+>
   <img
     [src]="avatar"
     class="rounded-full object-cover w-10 h-10"
@@ -10,4 +13,4 @@
     <p class="font-semibold text-md">{{ username }}</p>
     <p class="opacity-80 text-xs font-regular">{{ createdAt | date: 'dd/MM/yyyy' }}</p>
   </div>
-</div>
+</a>
