@@ -9,6 +9,7 @@ import {
   Input,
   OnChanges,
   OnDestroy,
+  OnInit,
   signal,
   SimpleChanges,
 } from '@angular/core';
@@ -22,7 +23,7 @@ import { UserInfo } from '../user-info/user-info';
   styleUrl: './list-articles.css',
   providers: [Articles, SubManager],
 })
-export class ListArticles implements OnChanges, OnDestroy {
+export class ListArticles implements OnInit, OnChanges, OnDestroy {
   @Input() tag: string | undefined = undefined;
 
   private readonly articlesService = inject(Articles);
@@ -30,6 +31,10 @@ export class ListArticles implements OnChanges, OnDestroy {
   articles = signal<Article[]>([]);
   errorMsg = signal('');
   noMoreItems = signal(false);
+
+  ngOnInit(): void {
+    this.getArticles(0);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tag'] && !changes['tag'].isFirstChange()) {
