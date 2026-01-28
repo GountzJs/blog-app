@@ -1,7 +1,6 @@
 import { GetAllRequestDTO } from '@/modules/articles/models/dtos/get-all-request.dto';
 import { Article } from '@/modules/articles/models/entities/article.entity';
 import { Articles } from '@/modules/articles/services/articles/articles';
-import { InfiniteScrollComponent } from '@/modules/common/components/infinite-scroll/infinite-scroll.component';
 import { ElipsisText } from '@/modules/common/directives/elipsis-text/elipsis-text';
 import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import {
@@ -20,7 +19,7 @@ import { UserInfo } from '../user-info/user-info';
 
 @Component({
   selector: 'app-list-articles',
-  imports: [UserInfo, RouterLink, InfiniteScrollComponent, ElipsisText, ArticleTags],
+  imports: [UserInfo, RouterLink, ElipsisText, ArticleTags],
   templateUrl: './list-articles.html',
   styleUrl: './list-articles.css',
   providers: [Articles, SubManager],

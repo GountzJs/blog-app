@@ -29,16 +29,4 @@
       </li>
     }
   </ul>
-
-  <app-infinite-scroll
-    [noMoreItems]="noMoreItems()"
-    [isLoading]="isLoading"
-    (nextItems)="loadMore()"
-  ></app-infinite-scroll>
-}
-
-@if (!isLoading && articles().length === 0 && tag) {
-  <p>No se encontraron articulos para el tag seleccionado</p>
-} @else if (!isLoading && articles().length === 0) {
-  <p>No se encontraron articulos</p>
 }
