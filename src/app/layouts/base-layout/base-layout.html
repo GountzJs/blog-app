@@ -1,0 +1,33 @@
+<div class="bg-black text-white base-layout w-full h-full">
+  <header class="flex items-center justify-between w-full border-b border-gray-800 px-47.5 py-4">
+    <p>logo</p>
+    <nav class="flex gap-4">
+      <a
+        routerLink="/"
+        class="transition-opacity duration-200 opacity-80 hover:opacity-100"
+        [class.opacity-100]="isActive('')"
+      >
+        Home
+      </a>
+      <a
+        routerLink="/auth/sign-in"
+        class="transition-opacity duration-200 opacity-80 hover:opacity-100"
+        [class.opacity-100]="isActive('/auth/sign-in')"
+      >
+        Sign In
+      </a>
+      <a
+        routerLink="/auth/sign-up"
+        class="transition-opacity duration-200 opacity-80 hover:opacity-100"
+        [class.opacity-100]="isActive('/auth/sign-up')"
+      >
+        Sign Up
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>Footer</footer>
+</div>
