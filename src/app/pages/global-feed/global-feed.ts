@@ -5,13 +5,13 @@ import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import { Component, inject, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-global-feed',
   imports: [ListArticles, InfiniteScrollComponent],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+  templateUrl: './global-feed.html',
+  styleUrl: './global-feed.css',
   providers: [SubManager],
 })
-export class Home {
+export class GlobalFeed {
   @ViewChild('listArticles') listArticles!: ListArticles;
   private readonly tagStore = inject(TagStore);
 

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Home } from './home';
+import { GlobalFeed } from './global-feed';
 
 describe('Home', () => {
-  let component: Home;
-  let fixture: ComponentFixture<Home>;
+  let component: GlobalFeed;
+  let fixture: ComponentFixture<GlobalFeed>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Home],
+      imports: [GlobalFeed],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Home);
+    fixture = TestBed.createComponent(GlobalFeed);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

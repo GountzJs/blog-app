@@ -13,7 +13,8 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            loadComponent: () => import('@/pages/home/home').then((m) => m.Home),
+            loadComponent: () =>
+              import('@/pages/global-feed/global-feed').then((m) => m.GlobalFeed),
           },
         ],
         providers: [TagStore],
