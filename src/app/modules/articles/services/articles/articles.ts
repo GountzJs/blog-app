@@ -16,7 +16,7 @@ export class Articles {
     favorited,
     limit,
     offset,
-  }: GetAllRequestDTO): Observable<{ articles: Article[] }> {
+  }: GetAllRequestDTO): Observable<{ articles: Article[]; articlesCount: number }> {
     const params: Record<string, string | number | boolean> = {};
     if (tag) params['tag'] = tag;
     if (author) params['author'] = author;
@@ -24,8 +24,11 @@ export class Articles {
     if (limit) params['limit'] = limit;
     if (offset) params['offset'] = offset;
 
-    return this.httpClient.get<{ articles: Article[] }>(`${this.apiUrl}/articles`, {
-      params,
-    });
+    return this.httpClient.get<{ articles: Article[]; articlesCount: number }>(
+      `${this.apiUrl}/articles`,
+      {
+        params,
+      },
+    );
   }
 }
