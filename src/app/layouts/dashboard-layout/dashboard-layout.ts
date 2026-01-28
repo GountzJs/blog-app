@@ -2,12 +2,13 @@ import { ClearTag } from '@/modules/articles/components/clear-tag/clear-tag';
 import { ListTags } from '@/modules/articles/components/list-tags/list-tags';
 import { TagStore } from '@/modules/articles/services/tag-store/tag-store';
 import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
+import { Location, NgClass } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-layout',
-  imports: [RouterOutlet, ListTags, ClearTag],
+  imports: [RouterOutlet, ListTags, ClearTag, NgClass],
   templateUrl: './dashboard-layout.html',
   styleUrl: './dashboard-layout.css',
   providers: [SubManager],
@@ -16,6 +17,7 @@ export class DashboardLayout implements OnInit, OnDestroy {
   private readonly aRoute = inject(ActivatedRoute);
   private readonly subManager = inject(SubManager);
   private readonly tagStore = inject(TagStore);
+  private readonly location = inject(Location);
 
   ngOnInit(): void {
     this.getParams();
@@ -35,5 +37,9 @@ export class DashboardLayout implements OnInit, OnDestroy {
 
   getTag(): string | undefined {
     return this.tagStore.get();
+  }
+
+  isActive(path: string): boolean {
+    return this.location.path().split('?')[0] === path;
   }
 }

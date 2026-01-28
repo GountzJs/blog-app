@@ -8,6 +8,29 @@
 </section>
 
 <section class="flex flex-col gap-4 px-47.5 py-8">
+  <nav class="flex items-center gap-6 py-2 w-full">
+    <a
+      routerLink="/"
+      aria-label="Go To Global feed"
+      class="cursor-pointer text-sm font-medium opacity-60 px-4 py-2"
+      [ngClass]="{
+        'border-sky-500 border-b-2 opacity-100': isActive(''),
+      }"
+    >
+      Global feed
+    </a>
+    <a
+      routerLink="/feed"
+      aria-label="Go To Your feed"
+      class="cursor-pointer text-sm font-medium opacity-60 px-4 py-2"
+      [ngClass]="{
+        'border-sky-500 border-b-2 opacity-100': isActive('/feed'),
+      }"
+    >
+      Your feed
+    </a>
+  </nav>
+
   <app-clear-tag [tag]="getTag()"></app-clear-tag>
 
   <article class="flex justify-between flex-wrap-reverse gap-4 w-full">
