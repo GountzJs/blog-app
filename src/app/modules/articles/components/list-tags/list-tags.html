@@ -6,7 +6,9 @@
   <ul class="flex flex-wrap gap-2">
     @for (tag of tags(); track $index) {
       <li class="bg-gray-900 rounded-full px-4 py-1.5">
-        <button type="button" (click)="filterByTag(tag)">{{ tag }}</button>
+        <button type="button" class="hover:opacity-60 cursor-pointer" (click)="filterByTag(tag)">
+          {{ tag }}
+        </button>
       </li>
     }
   </ul>
