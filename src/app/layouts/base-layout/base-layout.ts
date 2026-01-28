@@ -13,6 +13,6 @@ export class BaseLayout {
   private readonly location = inject(Location);
 
   isActive(url: string) {
-    return this.location.path() === url;
+    return this.location.path().split('?')[0] === url;
   }
 }
