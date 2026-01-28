@@ -18,6 +18,10 @@ export const routes: Routes = [
         loadComponent: () => import('@/pages/auth/register/register').then((m) => m.Register),
       },
       {
+        path: 'docs',
+        loadComponent: () => import('@/pages/docs/docs').then((m) => m.Docs),
+      },
+      {
         path: '**',
         redirectTo: '',
       },

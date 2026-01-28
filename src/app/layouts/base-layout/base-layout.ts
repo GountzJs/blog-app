@@ -9,7 +9,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './base-layout.css',
 })
 export class BaseLayout {
-  private location = inject(Location);
+  private readonly location = inject(Location);
 
   isActive(url: string) {
     return this.location.path() === url;

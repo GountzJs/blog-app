@@ -1,0 +1,7 @@
+@import 'swagger-ui-dist/swagger-ui.css';
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
