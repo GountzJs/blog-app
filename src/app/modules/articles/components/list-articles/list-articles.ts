@@ -15,11 +15,12 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ArticleTags } from '../article-tags/article-tags';
 import { UserInfo } from '../user-info/user-info';
 
 @Component({
   selector: 'app-list-articles',
-  imports: [UserInfo, RouterLink, InfiniteScrollComponent, ElipsisText],
+  imports: [UserInfo, RouterLink, InfiniteScrollComponent, ElipsisText, ArticleTags],
   templateUrl: './list-articles.html',
   styleUrl: './list-articles.css',
   providers: [Articles, SubManager],
