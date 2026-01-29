@@ -12,14 +12,14 @@ export class Auth {
   private readonly apiUrl = environment.apiUrl;
 
   signIn({ email, password }: SignInRequestDTO): Observable<{ user: UserAuthEntity }> {
-    return this.httpClient.post<{ user: UserAuthEntity }>(`${this.apiUrl}/auth/login`, {
+    return this.httpClient.post<{ user: UserAuthEntity }>(`${this.apiUrl}/users/login`, {
       email,
       password,
     });
   }
 
   signUp({ email, username, password }: SignUpRequestDTO): Observable<{ user: UserAuthEntity }> {
-    return this.httpClient.post<{ user: UserAuthEntity }>(`${this.apiUrl}/auth/register`, {
+    return this.httpClient.post<{ user: UserAuthEntity }>(`${this.apiUrl}/users`, {
       email,
       username,
       password,
