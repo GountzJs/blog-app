@@ -38,9 +38,10 @@ export const routes: Routes = [
         canActivate: [isNotAuthenticateGuard],
       },
       {
-        path: 'article/:slug',
+        path: 'article/create',
         loadComponent: () =>
-          import('@/pages/articles/view-article/view-article').then((m) => m.ViewArticle),
+          import('@/pages/articles/create-article/create-article').then((m) => m.CreateArticle),
+        canActivate: [isAuthenticateGuard],
       },
       {
         path: 'article/:slug/edit',
@@ -49,10 +50,9 @@ export const routes: Routes = [
         canActivate: [isAuthenticateGuard],
       },
       {
-        path: 'article/create',
+        path: 'article/:slug',
         loadComponent: () =>
-          import('@/pages/articles/create-article/create-article').then((m) => m.CreateArticle),
-        canActivate: [isAuthenticateGuard],
+          import('@/pages/articles/view-article/view-article').then((m) => m.ViewArticle),
       },
       {
         path: 'settings',
