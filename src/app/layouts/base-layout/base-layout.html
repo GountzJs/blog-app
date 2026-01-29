@@ -22,18 +22,18 @@
       </a>
       @if (isAuth) {
         <a
-          routerLink="/auth/sign-in"
-          aria-label="Go to sign in"
+          routerLink="/article/create"
+          aria-label="Go to new article"
           class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
-          [class.opacity-100]="isActive('/auth/sign-in')"
+          [class.opacity-100]="isActive('/article/create')"
         >
           New Article
         </a>
         <a
-          routerLink="/auth/sign-up"
-          aria-label="Go to sign up"
+          routerLink="/settings"
+          aria-label="Go to settings"
           class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
-          [class.opacity-100]="isActive('/auth/sign-up')"
+          [class.opacity-100]="isActive('/settings')"
         >
           Settings
         </a>
@@ -89,24 +89,45 @@
             Home
           </a>
         </li>
-        <li>
-          <a
-            routerLink="/auth/sign-in"
-            aria-label="Go to sign in"
-            class="transition-opacity duration-200 opacity-60 hover:opacity-100"
-          >
-            Sign In
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/auth/sign-up"
-            aria-label="Go to sign up"
-            class="transition-opacity duration-200 opacity-60 hover:opacity-100"
-          >
-            Sign Up
-          </a>
-        </li>
+        @if (isAuth) {
+          <li>
+            <a
+              routerLink="/auth/article/create"
+              aria-label="Go to new article"
+              class="transition-opacity duration-200 opacity-60 hover:opacity-100"
+            >
+              New Article
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/settings"
+              aria-label="Go to settings"
+              class="transition-opacity duration-200 opacity-60 hover:opacity-100"
+            >
+              Settings
+            </a>
+          </li>
+        } @else {
+          <li>
+            <a
+              routerLink="/auth/sign-in"
+              aria-label="Go to sign in"
+              class="transition-opacity duration-200 opacity-60 hover:opacity-100"
+            >
+              Sign In
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/auth/sign-up"
+              aria-label="Go to sign up"
+              class="transition-opacity duration-200 opacity-60 hover:opacity-100"
+            >
+              Sign Up
+            </a>
+          </li>
+        }
       </ul>
     </nav>
     <nav class="max-w-48">
