@@ -1,3 +1,4 @@
+import { CreateArticleRequestDTO } from '@/modules/articles/models/dtos/create-request.dto';
 import { GetAllArticlesRequestDTO } from '@/modules/articles/models/dtos/get-all-articles-request.dto';
 import { Article } from '@/modules/articles/models/entities/article.entity';
 import { HttpClient } from '@angular/common/http';
@@ -30,5 +31,16 @@ export class Articles {
         params,
       },
     );
+  }
+
+  create({ title, description, body, tagList }: CreateArticleRequestDTO): Observable<Article> {
+    return this.httpClient.post<Article>(`${this.apiUrl}/articles`, {
+      article: {
+        title,
+        description,
+        body,
+        tagList,
+      },
+    });
   }
 }
