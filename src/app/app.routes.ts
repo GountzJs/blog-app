@@ -1,8 +1,8 @@
 import { isAuthenticateGuard } from '@/core/guards/is-autenticate/is-authenticate-guard';
+import { isNotAuthenticateGuard } from '@/core/guards/is-not-authenticate/is-not-authenticate-guard';
 import { TagStore } from '@/modules/articles/services/tag-store/tag-store';
+import { UserStore } from '@/modules/user/services/user-store/user-store';
 import { Routes } from '@angular/router';
-import { isNotAuthenticateGuard } from './core/guards/is-not-authenticate/is-not-authenticate-guard';
-import { UserStore } from './modules/common/services/user-store/user-store';
 
 export const routes: Routes = [
   {

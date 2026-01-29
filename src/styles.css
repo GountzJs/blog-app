@@ -8,6 +8,7 @@
 
 html,
 body {
+  background-color: var(--color-black);
   height: 100%;
   min-height: 100dvh;
   width: 100%;
