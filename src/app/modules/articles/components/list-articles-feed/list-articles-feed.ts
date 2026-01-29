@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
   imports: [ElipsisText, UserInfo, ArticleTags, RouterLink],
   templateUrl: './list-articles-feed.html',
   styleUrl: './list-articles-feed.css',
-  providers: [ArticlesFeed],
+  providers: [ArticlesFeed, SubManager],
 })
 export class ListArticlesFeed implements OnInit, OnChanges, OnDestroy {
   private readonly articlesFeedService = inject(ArticlesFeed);

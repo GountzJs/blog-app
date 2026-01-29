@@ -15,9 +15,9 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class DashboardLayout implements OnInit, OnDestroy {
   private readonly aRoute = inject(ActivatedRoute);
-  private readonly subManager = inject(SubManager);
   private readonly tagStore = inject(TagStore);
   private readonly location = inject(Location);
+  private readonly subManager = inject(SubManager);
 
   ngOnInit(): void {
     this.getParams();
@@ -32,7 +32,7 @@ export class DashboardLayout implements OnInit, OnDestroy {
       const tag = params['tag'] || undefined;
       this.tagStore.set(tag);
     });
-    this.subManager.add(sub, 'get-params');
+    this.subManager.add(sub, 'get-queryparams-tags');
   }
 
   getTag(): string | undefined {
