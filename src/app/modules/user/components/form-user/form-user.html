@@ -1,0 +1,67 @@
+<form
+  class="flex flex-col gap-8 bg-gray-950 outline-2 outline-gray-800 p-8 rounded-lg w-120"
+  (submit)="onSubmit($event)"
+>
+  <fieldset class="flex flex-col gap-2">
+    <label for="email" class="text-white font-bold">Email</label>
+    <input
+      type="text"
+      id="email"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My amazing article"
+      [formField]="email"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="username" class="text-white font-bold">Username</label>
+    <input
+      type="text"
+      id="username"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My amazing article"
+      [formField]="username"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="bio" class="text-white font-bold">Bio</label>
+    <input
+      type="text"
+      id="bio"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My amazing article"
+      [formField]="bio"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="image" class="text-white font-bold">Image</label>
+    <input
+      type="text"
+      id="image"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My amazing article"
+      [formField]="image"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="password" class="text-white font-bold">Password</label>
+    <input
+      type="password"
+      id="password"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="********"
+      [formField]="password"
+    />
+  </fieldset>
+
+  <button
+    type="submit"
+    [disabled]="invalid"
+    class="w-full bg-sky-500 text-white py-2 px-4 rounded-md transition-colors duration-300 hover:bg-sky-600 disabled:opacity-60 disabled:bg-sky-500 disabled:cursor-default cursor-pointer font-semibold"
+  >
+    Update User
+  </button>
+</form>
