@@ -1,5 +1,5 @@
-import { Session } from '@/core/services/session';
-import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
+import { Session } from '@/core/services/session/session';
+import { SubManager } from '@/core/services/sub-manager/sub-manager';
 import { UserStore } from '@/modules/user/services/user-store/user-store';
 import { User } from '@/modules/user/services/user/user';
 import { Location, NgClass } from '@angular/common';

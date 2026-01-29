@@ -1,7 +1,7 @@
+import { SubManager } from '@/core/services/sub-manager/sub-manager';
 import { ClearTag } from '@/modules/articles/components/clear-tag/clear-tag';
 import { ListTags } from '@/modules/articles/components/list-tags/list-tags';
 import { TagStore } from '@/modules/articles/services/tag-store/tag-store';
-import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import { Location, NgClass } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';

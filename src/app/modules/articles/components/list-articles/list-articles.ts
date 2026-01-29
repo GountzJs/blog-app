@@ -1,8 +1,8 @@
+import { SubManager } from '@/core/services/sub-manager/sub-manager';
 import { GetAllArticlesRequestDTO } from '@/modules/articles/models/dtos/get-all-articles-request.dto';
 import { Article } from '@/modules/articles/models/entities/article.entity';
 import { Articles } from '@/modules/articles/services/articles/articles';
 import { ElipsisText } from '@/modules/common/directives/elipsis-text/elipsis-text';
-import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import {
   Component,
   inject,

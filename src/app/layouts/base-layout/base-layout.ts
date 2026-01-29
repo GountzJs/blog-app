@@ -1,4 +1,4 @@
-import { Session } from '@/core/services/session';
+import { Session } from '@/core/services/session/session';
 import { Icons } from '@/modules/common/components/icons/icons';
 import { BtnProfile } from '@/modules/user/components/btn-profile/btn-profile';
 import { Location } from '@angular/common';

@@ -1,4 +1,4 @@
-import { Session } from '@/core/services/session';
+import { Session } from '@/core/services/session/session';
 import { Auth } from '@/modules/auth/services/auth';
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, inject, Output, signal } from '@angular/core';

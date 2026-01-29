@@ -1,10 +1,10 @@
+import { SubManager } from '@/core/services/sub-manager/sub-manager';
 import { ArticleTags } from '@/modules/articles/components/article-tags/article-tags';
 import { UserInfo } from '@/modules/articles/components/user-info/user-info';
 import { GetAllArticlesFeedRequestDTO } from '@/modules/articles/models/dtos/get-all-articles-feed-request.dto';
 import { Article } from '@/modules/articles/models/entities/article.entity';
 import { ArticlesFeed } from '@/modules/articles/services/articles-feed/articles-feed';
 import { ElipsisText } from '@/modules/common/directives/elipsis-text/elipsis-text';
-import { SubManager } from '@/modules/common/services/sub-manager/sub-manager';
 import {
   Component,
   inject,
