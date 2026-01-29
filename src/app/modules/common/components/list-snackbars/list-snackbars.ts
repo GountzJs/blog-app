@@ -16,7 +16,8 @@ interface Message {
 })
 export class ListSnackbars implements OnInit, OnDestroy {
   private readonly pubsub = inject(PubSub);
-  private readonly subL = signal<null | PubSubSubscription>(null);
+  private readonly subscription = signal<null | PubSubSubscription>(null);
+  private readonly timeouts = signal<Map<string, number>>(new Map());
   readonly messages = signal<Message[]>([]);
 
   ngOnInit(): void {
@@ -24,17 +25,40 @@ export class ListSnackbars implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subL()?.unsubscribe();
+    this.subscription()?.unsubscribe();
+    this.timeouts().forEach((timeoutId) => clearTimeout(timeoutId));
+    this.timeouts().clear();
+  }
+
+  private removeMessage(id: string): void {
+    const timeoutId = this.timeouts().get(id);
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+      this.timeouts().delete(id);
+    }
+
+    this.messages.update((messages) => messages.filter((message) => message.id !== id));
   }
 
   getMessages(): void {
-    const sub = this.pubsub.subscribe('snackbar', ({ data, id }) => {
-      this.messages.update((messages) => {
-        const newType = (data as never)['type'] as 'success' | 'error' | 'warning';
-        const newMessage = (data as never)['message'] as string;
-        return [...messages, { id, type: newType, message: newMessage }];
-      });
+    const sub = this.pubsub.subscribe<Message>('snackbar', ({ data, id }) => {
+      this.messages.update((messages) => [
+        ...messages,
+        {
+          id,
+          type: data.type,
+          message: data.message,
+        },
+      ]);
+
+      const timeoutId = setTimeout(() => {
+        this.removeMessage(id);
+      }, 3000);
+
+      this.timeouts().set(id, timeoutId);
     });
-    this.subL.set(sub);
+
+    this.subscription.set(sub);
   }
 }
