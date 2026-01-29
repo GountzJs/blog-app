@@ -1,0 +1,13 @@
+<app-list-articles-feed #listArticles class="w-full"></app-list-articles-feed>
+
+@if (listArticles.articles().length) {
+  <app-infinite-scroll
+    [noMoreItems]="listArticles.noMoreItems()"
+    [isLoading]="listArticles.isLoading"
+    (nextItems)="listArticles.loadMore()"
+  ></app-infinite-scroll>
+}
+
+@if (!listArticles.isLoading && listArticles.articles().length === 0) {
+  <p>No se encontraron articulos</p>
+}
