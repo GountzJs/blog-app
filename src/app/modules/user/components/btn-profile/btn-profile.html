@@ -1,5 +1,18 @@
 @if (user) {
-  <a routerLink="/profile/@{{ user.username }}" class="flex items-center gap-2">
+  <a
+    routerLink="/profile/@{{ user.username }}"
+    class="flex items-center gap-2 opacity-60 hover:opacity-100"
+    [ngClass]="{
+      'opacity-100': isActive(),
+    }"
+  >
+    <img
+      [src]="user.image"
+      class="rounded-full"
+      width="20"
+      height="20"
+      alt="Avatar {{ user.username }}"
+    />
     @{{ user.username }}
   </a>
 }
