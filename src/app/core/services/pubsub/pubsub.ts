@@ -20,10 +20,14 @@ type SubscriberCallback<T = any> = (message: PubSubMessage<T>) => void;
   providedIn: 'root',
 })
 export class PubSub {
-  private messagesSignal = signal<Map<string, PubSubMessage>>(new Map());
-  private subscribers = new Map<string, Set<SubscriberCallback>>();
-  private historySignal = signal<PubSubMessage[]>([]);
-  private maxHistorySize = 100;
+  private readonly messagesSignal = signal<Map<string, PubSubMessage>>(new Map());
+  private readonly subscribers = new Map<string, Set<SubscriberCallback>>();
+  private readonly historySignal = signal<PubSubMessage[]>([]);
+  private readonly maxHistorySize = 100;
+
+  private generateId(): string {
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  }
 
   publish<T>(topic: string, data: T): void {
     const message: PubSubMessage<T> = {
@@ -41,9 +45,8 @@ export class PubSub {
 
     this.historySignal.update((history) => {
       const newHistory = [...history, message];
-      if (newHistory.length > this.maxHistorySize) {
-        newHistory.shift();
-      }
+      if (newHistory.length > this.maxHistorySize) newHistory.shift();
+
       return newHistory;
     });
 
@@ -60,9 +63,7 @@ export class PubSub {
   }
 
   subscribe<T>(topic: string, callback: SubscriberCallback<T>): PubSubSubscription {
-    if (!this.subscribers.has(topic)) {
-      this.subscribers.set(topic, new Set());
-    }
+    if (!this.subscribers.has(topic)) this.subscribers.set(topic, new Set());
 
     this.subscribers.get(topic)!.add(callback as SubscriberCallback);
 
@@ -71,9 +72,7 @@ export class PubSub {
         const topicSubscribers = this.subscribers.get(topic);
         if (topicSubscribers) {
           topicSubscribers.delete(callback as SubscriberCallback);
-          if (topicSubscribers.size === 0) {
-            this.subscribers.delete(topic);
-          }
+          if (topicSubscribers.size === 0) this.subscribers.delete(topic);
         }
       },
     };
@@ -121,9 +120,5 @@ export class PubSub {
 
   getActiveTopics(): string[] {
     return Array.from(this.subscribers.keys());
-  }
-
-  private generateId(): string {
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   }
 }
