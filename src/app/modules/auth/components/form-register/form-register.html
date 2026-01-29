@@ -1,0 +1,61 @@
+<form
+  class="flex flex-col gap-8 bg-gray-950 outline-2 outline-gray-800 p-8 rounded-lg w-120"
+  (submit)="onSubmit($event)"
+>
+  <fieldset class="flex flex-col gap-2">
+    <label for="email" class="text-white">Email</label>
+    <input
+      id="email"
+      type="email"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      [ngClass]="{
+        'outline-red-500/40 hover:outline-red-500 focus:outline-red-500':
+          formData.email().invalid() && formData.email().touched(),
+      }"
+      placeholder="you@example.com"
+      [formField]="email"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="username" class="text-white">Username</label>
+    <input
+      id="username"
+      type="text"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      [ngClass]="{
+        'outline-red-500/40 hover:outline-red-500 focus:outline-red-500':
+          formData.username().invalid() && formData.username().touched(),
+      }"
+      placeholder="Enter your username"
+      [formField]="username"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="password" class="text-white">Password</label>
+    <input
+      id="password"
+      type="password"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      [ngClass]="{
+        'outline-red-500/40 hover:outline-red-500 focus:outline-red-500':
+          formData.password().invalid() && formData.password().touched(),
+      }"
+      placeholder="Enter your password"
+      [formField]="password"
+    />
+  </fieldset>
+  <button
+    type="submit"
+    class="w-full bg-sky-500 text-white py-2 px-4 rounded-md transition-colors duration-300 hover:bg-sky-600 disabled:opacity-60 disabled:bg-sky-500 disabled:cursor-default cursor-pointer font-semibold"
+    [disabled]="invalid"
+  >
+    Create Account
+  </button>
+
+  @if (errorMessage()) {
+    <div class="bg-gray-800 h-0.5 rounded-full w-full"></div>
+    <p class="text-red-500 text-center">{{ errorMessage() }}</p>
+  }
+</form>
