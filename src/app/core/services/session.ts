@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class Session {
   set(token: string): void {
     sessionStorage.setItem('token', token);

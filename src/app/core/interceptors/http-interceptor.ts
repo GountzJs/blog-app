@@ -10,15 +10,15 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
 
   const token = session.get();
 
-  if (token) {
-    req = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  }
+  const clonedReq = token
+    ? req.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    : req;
 
-  return next(req).pipe(
+  return next(clonedReq).pipe(
     catchError((err) => {
       if (err.status === 401) {
         session.clear();
