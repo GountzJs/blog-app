@@ -1,1 +1,28 @@
-<p>login works!</p>
+<section class="flex flex-1 flex-col gap-8 items-center justify-center px-47.5 py-8 h-full w-full">
+  <div class="flex items-center gap-2">
+    <div
+      class="w-8 h-8 bg-sky-500 text-white font-black flex items-center justify-center rounded-full"
+    >
+      B
+    </div>
+    <p class="text-2xl font-semibold">Bloggy</p>
+  </div>
+  <hgroup class="flex flex-col gap-2 items-center">
+    <h1 class="text-white font-black text-4xl">Welcome back</h1>
+    <div class="flex items-center gap-2">
+      <p class="text-white text-regular opacity-60">Don't have an account?</p>
+      <a
+        routerLink="/auth/sign-up"
+        class="text-sky-500 cursor-pointer hover:opacity-80 font-semibold"
+      >
+        Sign up
+      </a>
+    </div>
+  </hgroup>
+  <app-form-login (loginSuccess)="onLoginSuccess()"></app-form-login>
+  <p class="text-xs text-white/60">
+    By signing in, you agree to our
+    <strong class="text-sky-500 opacity-100">Terms of Service</strong> and
+    <strong class="text-sky-500 opacity-100">Privacy Policy</strong>
+  </p>
+</section>
