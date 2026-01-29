@@ -1,0 +1,9 @@
+<ul
+  class="flex flex-col justify-end gap-4 fixed top-0 right-0 h-full w-fit overflow-hidden p-4 pointer-events-none"
+>
+  @for (item of messages(); track $index) {
+    <li>
+      <app-snackbar [type]="item.type" [message]="item.message"></app-snackbar>
+    </li>
+  }
+</ul>
