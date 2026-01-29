@@ -1,4 +1,4 @@
-import { GetAllRequestDTO } from '@/modules/articles/models/dtos/get-all-request.dto';
+import { GetAllArticlesRequestDTO } from '@/modules/articles/models/dtos/get-all-articles-request.dto';
 import { Article } from '@/modules/articles/models/entities/article.entity';
 import { Articles } from '@/modules/articles/services/articles/articles';
 import { ElipsisText } from '@/modules/common/directives/elipsis-text/elipsis-text';
@@ -50,7 +50,7 @@ export class ListArticles implements OnInit, OnChanges, OnDestroy {
   }
 
   private getArticles(offset: number): void {
-    const params: GetAllRequestDTO = {
+    const params: GetAllArticlesRequestDTO = {
       limit: 10,
       offset,
     };
