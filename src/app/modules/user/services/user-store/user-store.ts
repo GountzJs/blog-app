@@ -1,4 +1,4 @@
-import { UserData } from '@/modules/common/models/types/user-data.type';
+import { UserData } from '@/modules/user/models/types/user-data.type';
 import { Injectable, signal } from '@angular/core';
 
 @Injectable()

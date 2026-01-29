@@ -1,19 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Session {
+  private readonly token = signal<string | null>(null);
+
+  constructor() {
+    this.token.set(sessionStorage.getItem('token'));
+  }
+
   set(token: string): void {
     sessionStorage.setItem('token', token);
+    this.token.set(token);
   }
 
   get(): string | null {
-    return sessionStorage.getItem('token');
+    return this.token();
   }
 
   clear(): void {
     sessionStorage.removeItem('token');
+    this.token.set(null);
   }
 
   isAuth(): boolean {

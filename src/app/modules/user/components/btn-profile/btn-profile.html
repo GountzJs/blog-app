@@ -1,0 +1,5 @@
+@if (user) {
+  <a routerLink="/profile/@{{ user.username }}" class="flex items-center gap-2">
+    @{{ user.username }}
+  </a>
+}
