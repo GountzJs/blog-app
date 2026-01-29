@@ -12,4 +12,8 @@ export class UserStore {
   set(data: UserData): void {
     this.data.set(data);
   }
+
+  clear(): void {
+    this.data.set(null);
+  }
 }
