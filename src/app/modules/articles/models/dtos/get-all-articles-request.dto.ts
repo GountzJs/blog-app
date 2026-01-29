@@ -1,4 +1,4 @@
-export interface GetAllRequestDTO {
+export interface GetAllArticlesRequestDTO {
   tag?: string;
   author?: string;
   favorited?: boolean;
