@@ -1,6 +1,6 @@
 import { PubSub } from '@/core/services/pubsub/pubsub';
 import { Articles } from '@/modules/articles/services/articles/articles';
-import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FieldTree, form, FormField, maxLength, minLength, required } from '@angular/forms/signals';
 
 interface FormData {
@@ -18,7 +18,6 @@ interface FormData {
   providers: [Articles],
 })
 export class FormCreate {
-  @Output() articleCreated = new EventEmitter<void>();
   private readonly articlesService = inject(Articles);
   private readonly dataModel = signal<FormData>({
     title: '',
@@ -54,6 +53,13 @@ export class FormCreate {
     });
   });
 
+  private reset(): void {
+    this.formData.title().setControlValue('');
+    this.formData.description().setControlValue('');
+    this.formData.body().setControlValue('');
+    this.formData.tagsList().setControlValue('');
+  }
+
   trimChips(e: Event) {
     const target = e.target as HTMLInputElement;
     target.value = target.value.toLowerCase().replace(/\s+/g, '');
@@ -76,7 +82,7 @@ export class FormCreate {
             type: 'success',
             message: 'Artículo creado exitosamente',
           });
-          this.articleCreated.emit();
+          this.reset();
         },
         error: () => {
           this.pubsub.publish('snackbar', {
