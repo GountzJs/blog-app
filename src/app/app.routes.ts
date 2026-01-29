@@ -16,6 +16,10 @@ export const routes: Routes = [
             loadComponent: () =>
               import('@/pages/global-feed/global-feed').then((m) => m.GlobalFeed),
           },
+          {
+            path: 'feed',
+            loadComponent: () => import('@/pages/your-feed/your-feed').then((m) => m.YourFeed),
+          },
         ],
         providers: [TagStore],
       },
