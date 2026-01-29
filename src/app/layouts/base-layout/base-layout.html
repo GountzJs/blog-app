@@ -20,22 +20,42 @@
       >
         Home
       </a>
-      <a
-        routerLink="/auth/sign-in"
-        aria-label="Go to sign in"
-        class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
-        [class.opacity-100]="isActive('/auth/sign-in')"
-      >
-        Sign In
-      </a>
-      <a
-        routerLink="/auth/sign-up"
-        aria-label="Go to sign up"
-        class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
-        [class.opacity-100]="isActive('/auth/sign-up')"
-      >
-        Sign Up
-      </a>
+      @if (isAuth) {
+        <a
+          routerLink="/auth/sign-in"
+          aria-label="Go to sign in"
+          class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
+          [class.opacity-100]="isActive('/auth/sign-in')"
+        >
+          New Article
+        </a>
+        <a
+          routerLink="/auth/sign-up"
+          aria-label="Go to sign up"
+          class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
+          [class.opacity-100]="isActive('/auth/sign-up')"
+        >
+          Settings
+        </a>
+        <app-btn-profile></app-btn-profile>
+      } @else {
+        <a
+          routerLink="/auth/sign-in"
+          aria-label="Go to sign in"
+          class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
+          [class.opacity-100]="isActive('/auth/sign-in')"
+        >
+          Sign In
+        </a>
+        <a
+          routerLink="/auth/sign-up"
+          aria-label="Go to sign up"
+          class="font-medium transition-opacity duration-200 opacity-60 hover:opacity-100"
+          [class.opacity-100]="isActive('/auth/sign-up')"
+        >
+          Sign Up
+        </a>
+      }
     </nav>
   </header>
 
