@@ -1,4 +1,3 @@
-// pubsub.service.ts
 import { computed, Injectable, signal, Signal } from '@angular/core';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
