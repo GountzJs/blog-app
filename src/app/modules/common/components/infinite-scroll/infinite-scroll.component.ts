@@ -16,7 +16,7 @@ import {
   templateUrl: './infinite-scroll.component.html',
   styleUrl: './infinite-scroll.component.css',
 })
-export class InfiniteScrollComponent implements OnInit, OnDestroy {
+export class InfiniteScroll implements OnInit, OnDestroy {
   @Input() isLoading = false;
   @Input() noMoreItems = false;
   @Output() nextItems = new EventEmitter<void>();
