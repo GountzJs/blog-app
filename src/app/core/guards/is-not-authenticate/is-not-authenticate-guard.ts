@@ -1,11 +1,11 @@
-import { UserStore } from '@/modules/common/services/user-store/user-store';
+import { Session } from '@/core/services/session';
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
 export const isNotAuthenticateGuard: CanActivateFn = () => {
-  const userStore = inject(UserStore);
+  const session = inject(Session);
   const router = inject(Router);
-  if (userStore.get()) {
+  if (session.isAuth()) {
     router.navigate(['/']);
     return false;
   }
