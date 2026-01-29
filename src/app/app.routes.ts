@@ -38,6 +38,28 @@ export const routes: Routes = [
         canActivate: [isNotAuthenticateGuard],
       },
       {
+        path: 'article/:slug',
+        loadComponent: () =>
+          import('@/pages/articles/view-article/view-article').then((m) => m.ViewArticle),
+      },
+      {
+        path: 'article/:slug/edit',
+        loadComponent: () =>
+          import('@/pages/articles/edit-article/edit-article').then((m) => m.EditArticle),
+        canActivate: [isAuthenticateGuard],
+      },
+      {
+        path: 'article/create',
+        loadComponent: () =>
+          import('@/pages/articles/create-article/create-article').then((m) => m.CreateArticle),
+        canActivate: [isAuthenticateGuard],
+      },
+      {
+        path: 'settings',
+        loadComponent: () => import('@/pages/settings/settings').then((m) => m.Settings),
+        canActivate: [isAuthenticateGuard],
+      },
+      {
         path: 'docs',
         loadComponent: () => import('@/pages/docs/docs').then((m) => m.Docs),
       },
