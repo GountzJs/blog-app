@@ -1,0 +1,63 @@
+<form
+  class="flex flex-col gap-8 bg-gray-950 outline-2 outline-gray-800 p-8 rounded-lg w-120"
+  (submit)="onSubmit($event)"
+>
+  <fieldset class="flex flex-col gap-2">
+    <label for="title" class="text-white font-bold">Title</label>
+    <input
+      type="text"
+      id="title"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My amazing article"
+      [formField]="title"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="description" class="text-white font-bold">Description</label>
+    <input
+      type="text"
+      id="description"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="A description of my article"
+      [formField]="description"
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="body" class="text-white font-bold">Body</label>
+    <textarea
+      id="body"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="My article body"
+      [formField]="body"
+    ></textarea>
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-2">
+    <label for="tags" class="text-white font-bold">Tags</label>
+    <input
+      type="text"
+      id="tags"
+      class="bg-black outline outline-white/60 hover:outline-white focus:outline-white py-2 px-6 rounded-md"
+      placeholder="Tag1,Tag2,Tag3"
+      [formField]="tagsList"
+      (input)="trimChips($event)"
+    />
+    <p class="text-sm text-white/60">Tags are separated by commas</p>
+  </fieldset>
+
+  <ul class="flex flex-wrap gap-2 w-full">
+    @for (tag of tags; track $index) {
+      <li class="bg-gray-800 text-white px-4 py-1 rounded-full">{{ tag }}</li>
+    }
+  </ul>
+
+  <button
+    type="submit"
+    [disabled]="invalid"
+    class="w-full bg-sky-500 text-white py-2 px-4 rounded-md transition-colors duration-300 hover:bg-sky-600 disabled:opacity-60 disabled:bg-sky-500 disabled:cursor-default cursor-pointer font-semibold"
+  >
+    Create Article
+  </button>
+</form>
