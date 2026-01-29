@@ -1,4 +1,4 @@
-import { Session } from '@/core/services/session';
+import { Session } from '@/core/services/session/session';
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 

@@ -1,8 +1,8 @@
+import { Session } from '@/core/services/session/session';
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
-import { Session } from '../services/session';
 
 export const httpInterceptor: HttpInterceptorFn = (req, next) => {
   const session = inject(Session);
