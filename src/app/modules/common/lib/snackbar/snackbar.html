@@ -1,0 +1,19 @@
+<div
+  class="flex items-center justify-center p-1 w-fit rounded-lg text-lg font-semibold text-white"
+  [ngClass]="{
+    'bg-green-300': type === 'success',
+    'bg-red-300': type === 'error',
+    'bg-yellow-300': type === 'warning',
+  }"
+>
+  <div
+    class="flex items-center justify-center p-4 w-fit rounded-lg text-lg font-semibold text-white"
+    [ngClass]="{
+      'bg-green-600': type === 'success',
+      'bg-red-600': type === 'error',
+      'bg-yellow-600': type === 'warning',
+    }"
+  >
+    {{ message }}
+  </div>
+</div>
